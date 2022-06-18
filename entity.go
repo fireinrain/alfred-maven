@@ -47,3 +47,22 @@ type Docs []struct {
 	Ec        []string `json:"ec"`
 	Tags      []string `json:"tags"`
 }
+
+// GAVEntity for template generator
+type GAVEntity struct {
+	GroupId    string
+	ArtifactId string
+	Version    string
+}
+
+// Package for workflow item
+type Package struct {
+	//GroupId of package
+	GroupId string
+	//ArtifactId of package
+	ArtifactId string
+	// Version of package
+	Version string
+	// UpdateTime of package
+	UpdateTime string
+}

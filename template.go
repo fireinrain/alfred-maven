@@ -18,13 +18,6 @@ const (
 	PolicyBazel     PlatFormType = "Bazel"
 )
 
-// GAVEntity
-type GAVEntity struct {
-	GroupId    string
-	ArtifactId string
-	Version    string
-}
-
 func (gav GAVEntity) toString() {
 	fmt.Println("groupId: ", gav.GroupId, "artifactId: ", gav.ArtifactId, "version: ", gav.Version)
 }

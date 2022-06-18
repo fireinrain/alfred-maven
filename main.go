@@ -64,6 +64,6 @@ func main() {
 	if err != nil {
 		fmt.Println("序列化MavenResponse失败: ", err)
 	}
-	//fmt.Println(mavenResponse)
+	fmt.Println(mavenResponse)
 
 }
