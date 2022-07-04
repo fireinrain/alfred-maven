@@ -4,6 +4,7 @@ import "fmt"
 
 type PlatFormType string
 
+//模板的格式类型
 const (
 	PolicyMaven     PlatFormType = "Apache Maven"
 	PolicyGradle    PlatFormType = "Gradle Groovy"
@@ -18,11 +19,8 @@ const (
 	PolicyBazel     PlatFormType = "Bazel"
 )
 
-func (gav GAVEntity) toString() {
-	fmt.Println("groupId: ", gav.GroupId, "artifactId: ", gav.ArtifactId, "version: ", gav.Version)
-}
-
-func GenDependencyTemplate(platFormType PlatFormType, gAVEntity GAVEntity) string {
+// GenDependencyTemplate 根据指定的模板类型 生成依赖字符串
+func GenDependencyTemplate(platFormType PlatFormType, gAVEntity PackageEntity) string {
 
 	switch platFormType {
 	case PolicyMaven:
@@ -51,5 +49,5 @@ func GenDependencyTemplate(platFormType PlatFormType, gAVEntity GAVEntity) strin
 		return fmt.Sprintf("[%s/%s \"%s\"]", gAVEntity.GroupId, gAVEntity.ArtifactId, gAVEntity.Version)
 	}
 
-	return "unsupported platform"
+	return "unsupported platform format"
 }
